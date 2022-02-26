@@ -85,7 +85,7 @@ trend_plot <- ggplot(data = region_5yr) +
 
 
 # Variable Comparison
-# rated capacity of jail vs. total jail population in 2018
+# White jail population vs. total population
 total_vs_white <- incarceration %>%
   filter(year == 2018) %>%
   select(total_pop, white_jail_pop) %>%
@@ -104,7 +104,7 @@ comparsion <- ggplot(data = total_vs_white) +
 
 # Map
 # Percentages of Black jail population by state in 2018
-# Categories: 0-10%, 10-20%, 20-30%, 30-40%, >40%
+# Categories: 0-10%, 10-20%, 20-30%, 30-40%, 40%- >50%
 black_jail_pop_states <- incarceration %>%
   filter(year == 2018) %>%
   group_by(state) %>%
