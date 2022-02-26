@@ -1,0 +1,48 @@
+---
+title: "Assignment 3: Incarceration"
+author: "Tingyu Zheng"
+date: "2/24/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+source("analysis.R")
+library(ggplot2)
+library(knitr)
+```
+
+## Introduction and Summary Information
+
+### Introcution
+In this assignment, I will be investigating incarceration rate and jail population of Black people and White people, throughout years and across regions. According to the documentary _13TH_, prison population had been on the rise since the 1970s, when Nixon began to focus on criminalizing drug use, particularly strict on Black folks. **13th Amendment** freed former enslaved people from slavery, but it does not grant freedom to those who are **criminals**. Thus, as pointed out in the documentary, people found loophole in the Amendment and started disproportionately put African Americans in jail. It is important for us to show this issue using data.
+
+### Summary
+First, the percentage of Black people in jail is `r black_jail_pop_perc`%, which is much greater than the percentage of Black population in the US (`r black_pop_perc`%). Regional difference is also huge. In 2018, difference in the proportion of the prison population of African American in the South and North is `r diff_ne_south`%, indicating that South has a higher incarceration rate of Black people. While the majority of incarcerated people are male, African American women also face harshly high incarceration rate, with a percentage of `r black_women`%. Although the percentage has decrease by `r diff_1995_2018`% since 1995, it is still way above the percentage of African American population. 
+
+## Trends Over Time Chart
+
+The following chart shows the trends of jail population in 4 regions in the US. This chart aims to indicate if the jail population had increase from 1995 to 2015 and which region has the highest increase.
+```{r trend, echo = FALSE}
+trend_plot
+```
+
+We can tell from the plot that jail population had all increased in the 4 regions. South has the largest increase compared to other regions. 
+
+## Variable Comparison Chart
+
+In this chart, I compare total population and white population in jail, and see if they are correlated.
+```{r comparison, echo = FALSE}
+comparsion
+
+```
+
+This chart shows that total population and White population in jail is generally positively correlated. However, there are still some outliers that has a steeper slope than the general trend. These locations might have worse racial disparity in incarceration.
+
+## Map
+
+The following map categorizes the incarceration rate of Black people by state.
+```{r map, echo = FALSE}
+map
+```
+
+Overall, incarceration rate of Black people in the east is higher than in the west. There are also several southern states that have rates higher than 50%. According to the values given above, Black Americans only make up around 13% of the US population. Therefore, over half of the states in the US might have problems of over policing on Black people.
